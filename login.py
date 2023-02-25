@@ -27,30 +27,29 @@ def view_all_users():
 
 def main ():
     st.title("Authentification")
-    menu=["Accueil","login","inscription"]
+    menu=["Accueil","Login","Inscription"]
     choix=st.sidebar.selectbox("Menu",menu)
 
-    if choix=="home":
-        st.subheader("home")
+    if choix=="Accueil":
+        st.subheader("Accueil")
 
-    elif choix=="login":
-        st.subheader("section login ")
+    elif choix=="Login":
+        st.subheader("Section login ")
         username=st.sidebar.text_input("User Name")
         password=st.sidebar.text_input("Password",type='password')
-    if st.sidebar.checkbox("login"):
+    if st.sidebar.checkbox("Login"):
         #if password == '12345':
         create_usertable()
         result = login_user(username,password)
         if result:
-            st.success("logged IN as {}".format(username))
+            st.success("Connecte tant que  {}".format(username))
 
-            task = st.selectbox("Task", ["Add post", "Analytics", "Profiles"])
-            if task == "Add post":
-                st.subheader("Add your post")
-            elif task == "Analytics":
-                st.subheader("Analytics")
-            elif task == "Profiles":
-                st.subheader("user profiles")
+            task = st.selectbox("Task", ["Ajouter un client ", "Profils"])
+            if task == "Ajouter un client":
+                st.subheader("Ajoutez votre client")
+
+            elif task == "Profils":
+                st.subheader("Profils des utilisateurs")
                 user_result = view_all_users()
                 clean_db = pd.DataFrame(user_result, columns=["Username", "Password"])
                 st.dataframe(clean_db)
@@ -62,17 +61,17 @@ def main ():
 
 
 
-    elif choix=="inscription":
+    elif choix=="Inscription":
 
-        st.subheader("creer un nv compte")
+        st.subheader("Creer un nouveau compte")
         new_user = st.text_input("Username")
         new_password = st.text_input("Password",type='password')
 
-        if st.button("inscription"):
+        if st.button("Inscription"):
             create_usertable()
             add_userdata(new_user,new_password)
-            st.success("succssfully")
-            st.info("GO to logun Menu to login")
+            st.success("Utilisateur ajoute avec succes")
+
 
 if __name__ == '__main__':
   main()
