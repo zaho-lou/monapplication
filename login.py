@@ -27,7 +27,7 @@ def view_all_users():
 
 def main ():
     st.title("Authentification")
-    menu=["home","login","inscription"]
+    menu=["Accueil","login","inscription"]
     choix=st.sidebar.selectbox("Menu",menu)
 
     if choix=="home":
