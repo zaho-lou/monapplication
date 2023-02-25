@@ -10,9 +10,9 @@ import pandas as pd
 
 st.write('''
 # Bienvenue 
-Hello word 
+Hello world 
 ''')
-st.sidebar.header("les parametres")
+st.sidebar.header("Les parametres")
 
 df = pd.read_excel("lydia18.xlsx")
 st.line_chart(df)
