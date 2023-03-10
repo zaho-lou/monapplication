@@ -3,7 +3,7 @@ import folium
 import streamlit as st
 
 # Charger les données à partir du fichier CSV
-df = pd.read_excel('Classeur1.xlsx')
+df = pd.read_csv('ts_brutt.csv')
 
 # Convertir la colonne "date" en format date
 df['date'] = pd.to_datetime(df['date'], format='%m%Y')
