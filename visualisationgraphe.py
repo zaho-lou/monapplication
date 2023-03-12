@@ -13,7 +13,7 @@ from pandas import datetime
 from pylab import rcParams
 
 
-# Load the dataset from a CSV
+# impoter  le fichier csv 
 def parser(x):
     return datetime.strptime(x,'%m%Y')
 data = pd.read_csv('ts_brutt.csv', sep=";",index_col=1,parse_dates=[1], squeeze=True, date_parser=parser)
