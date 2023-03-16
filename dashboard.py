@@ -27,9 +27,9 @@ with left_column:
     st.subheader(f"{total_customers:}")
 
 with right_column:
-    st.subheader("Total Cusump:")
+    st.subheader("Total Consumption:")
     total_cust = data['valeur'].nunique()
-    st.write("Total Cusump:", total_cust)
+    st.write("Total Consumption:", total_cust)
     st.subheader(f"{total_cust:}")
 
 st.markdown("""---""")
