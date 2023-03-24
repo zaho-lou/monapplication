@@ -15,7 +15,7 @@ data = pd.read_csv('/Users/ACER/Desktop/ts_bruttt22.csv', sep=";",index_col=1,pa
 data['valeur']=data.valeur.fillna(0)
 
 
-# Création de la carte centrée sur l'Algérie
+# Création de la carte centrée sur Béjaia 
 m = folium.Map(location=[36.7602, 5.0554], zoom_start=10)
 
 
